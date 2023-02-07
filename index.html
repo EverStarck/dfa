@@ -104,6 +104,65 @@
 
         return end.includes(currentState);
       }
+      const automaton = {
+        1: {
+          states: ["Q0Q2", "Q1Q4", "Q3"],
+          alph: ["a", "b", "c"],
+          start: "Q0Q2",
+          end: ["Q3"],
+          transitionTable: {
+            Q0Q2: { a: "Q1Q4", b: "Q0Q2", c: "Q3" },
+            Q1Q4: { a: "Q1Q4", b: "Q3", c: "Q1Q4" },
+            Q3: { a: "Q1Q4", b: "Q1Q4", c: "Q1Q4" },
+          },
+        },
+        2: {
+          states: ["Q3Q6Q8", "Q0", "Q5", "Q1", "Q4"],
+          alph: ["a", "b", "c"],
+          start: "Q0",
+          end: ["Q3Q6Q8"],
+          transitionTable: {
+            Q3Q6Q8: { a: "Q5", b: "Q5", c: "Q5" },
+            Q0: { a: "Q4", b: "Q5", c: "Q1" },
+            Q5: { a: "Q5", b: "Q5", c: "Q5" },
+            Q1: { a: "Q5", b: "Q5", c: "Q3Q6Q8" },
+            Q4: { a: "Q4", b: "Q3Q6Q8", c: "Q1" },
+          },
+        },
+        3: {
+          states: ["Q0Q1Q2Q3Q4Q6Q9", "Q7Q8"],
+          alph: ["a", "b", "c"],
+          start: "Q0Q1Q2Q3Q4Q6Q9",
+          end: ["Q7Q8"],
+          transitionTable: {
+            Q0Q1Q2Q3Q4Q6Q9: {
+              a: "Q0Q1Q2Q3Q4Q6Q9",
+              b: "Q0Q1Q2Q3Q4Q6Q9",
+              c: "Q0Q1Q2Q3Q4Q6Q9",
+            },
+            Q7Q8: { a: "Q7Q8", b: "Q0Q1Q2Q3Q4Q6Q9", c: "Q0Q1Q2Q3Q4Q6Q9" },
+          },
+        },
+        4: {
+          states: ["Q0Q5Q8Q9Q11Q12", "Q10"],
+          alph: ["c", "f", "d"],
+          start: "Q0Q5Q8Q9Q11Q12",
+          end: ["Q10"],
+          transitionTable: {
+            Q0Q5Q8Q9Q11Q12: {
+              a: "Q0Q5Q8Q9Q11Q12",
+              b: "Q10",
+              c: "Q0Q5Q8Q9Q11Q12",
+            },
+            Q10: {
+              a: "Q0Q5Q8Q9Q11Q12",
+              b: "Q0Q5Q8Q9Q11Q12",
+              c: "Q0Q5Q8Q9Q11Q12",
+            },
+          },
+        },
+      };
+
     </script>
   </body>
 </html>
