@@ -1337,6 +1337,27 @@
         },
       };
 
+      function validate(dfaN) {
+        const inputEl = document.querySelector(`#dfa${dfaN}_input`);
+        const labelEl = document.querySelector(`#dfa${dfaN}_label`);
+        const { states, alph, start, end, transitionTable } = automaton[dfaN];
+
+        const input = inputEl.value;
+        if (input === "") {
+          alert("Please enter a value");
+          return;
+        }
+
+        const valid = validateDFA(
+          states,
+          alph,
+          (currentState, symbol) => transitionTable[currentState][symbol],
+          start,
+          end,
+          input
+        );
+        setStyles(valid, inputEl, labelEl);
+      }
     </script>
   </body>
 </html>
