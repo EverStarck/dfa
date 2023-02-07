@@ -104,6 +104,22 @@
 
         return end.includes(currentState);
       }
+
+      function setStyles(valid, input, label) {
+        if (valid) {
+          input.classList =
+            "block w-full p-4 text-sm text-green border border-green rounded-lg bg-bg_tertiary focus:ring-blue-500 focus:border-blue-500";
+          label.classList = "block mb-2 text-sm font-medium text-green";
+          label.innerHTML = "DFA Valid!";
+          return;
+        }
+
+        input.classList =
+          "block w-full p-4 text-sm text-red border border-red rounded-lg bg-bg_tertiary focus:ring-blue-500 focus:border-blue-500";
+        label.classList = "block mb-2 text-sm font-medium text-red";
+        label.innerHTML = "DFA Invalid!";
+      }
+
       const automaton = {
         1: {
           states: ["Q0Q2", "Q1Q4", "Q3"],
