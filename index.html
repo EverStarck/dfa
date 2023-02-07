@@ -84,4 +84,26 @@
     </script>
     <title>DFA Validator</title>
   </head>
+  <body class="bg-bg_primary md:max-lg:mb-8 2xl:h-screen grid place-content-center">
+    <script>
+      function validateDFA(states, alph, tansitionFn, start, end, input) {
+        let currentState = start;
+
+        for (const symbol of input) {
+          if (!alph.includes(symbol)) {
+            return false;
+          }
+
+          // Next state
+          currentState = tansitionFn(currentState, symbol);
+
+          if (!states.includes(currentState)) {
+            return false;
+          }
+        }
+
+        return end.includes(currentState);
+      }
+    </script>
+  </body>
 </html>
