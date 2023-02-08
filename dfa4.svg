@@ -1,0 +1,215 @@
+<svg
+            width="356pt"
+            height="226pt"
+            viewBox="0.00 0.00 355.79 225.78"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <g
+              id="graph0"
+              class="graph"
+              transform="scale(1 1) rotate(0) translate(4 221.7848)"
+            >
+              <title>DFA_4</title>
+              <polygon
+                fill="transparent"
+                stroke="transparent"
+                points="-4,4 -4,-221.7848 351.7896,-221.7848 351.7896,4 -4,4"
+                style="
+                  --darkreader-inline-fill: #ffffff;
+                  --darkreader-inline-stroke: transparent;
+                "
+                data-darkreader-inline-fill=""
+                data-darkreader-inline-stroke=""
+              ></polygon>
+              <!-- Q10 -->
+              <g id="node1" class="node">
+                <title>Q10</title>
+                <ellipse
+                  fill="none"
+                  stroke="#e7e7e7"
+                  cx="316.1248"
+                  cy="-91.4924"
+                  rx="27.8095"
+                  ry="27.8095"
+                  style="--darkreader-inline-stroke: #e8e6e3"
+                  data-darkreader-inline-stroke=""
+                ></ellipse>
+                <ellipse
+                  fill="none"
+                  stroke="#e7e7e7"
+                  cx="316.1248"
+                  cy="-91.4924"
+                  rx="31.8305"
+                  ry="31.8305"
+                  style="--darkreader-inline-stroke: #e8e6e3"
+                  data-darkreader-inline-stroke=""
+                ></ellipse>
+                <text
+                  text-anchor="middle"
+                  x="316.1248"
+                  y="-87.2924"
+                  font-family="Times,serif"
+                  font-size="14.00"
+                  fill="#e7e7e7"
+                  style="--darkreader-inline-fill: #e8e6e3"
+                  data-darkreader-inline-fill=""
+                >
+                  Q10
+                </text>
+              </g>
+              <!-- secret_node -->
+              <!-- Q0Q5Q8Q9Q11Q12 -->
+              <g id="node3" class="node">
+                <title>Q0Q5Q8Q9Q11Q12</title>
+                <ellipse
+                  fill="none"
+                  stroke="#e7e7e7"
+                  cx="132.0924"
+                  cy="-91.4924"
+                  rx="91.4848"
+                  ry="91.4848"
+                  style="--darkreader-inline-stroke: #e8e6e3"
+                  data-darkreader-inline-stroke=""
+                ></ellipse>
+                <text
+                  text-anchor="middle"
+                  x="132.0924"
+                  y="-87.2924"
+                  font-family="Times,serif"
+                  font-size="14.00"
+                  fill="#e7e7e7"
+                  style="--darkreader-inline-fill: #e8e6e3"
+                  data-darkreader-inline-fill=""
+                >
+                  Q0Q5Q8Q9Q11Q12
+                </text>
+              </g>
+              <!-- secret_node&#45;&gt;Q0Q5Q8Q9Q11Q12 -->
+              <g id="edge1" class="edge">
+                <title>secret_node-&gt;Q0Q5Q8Q9Q11Q12</title>
+                <path
+                  fill="none"
+                  stroke="#e7e7e7"
+                  stroke-width="2"
+                  d="M3.6419,-91.4924C7.5855,-91.4924 17.5306,-91.4924 30.2435,-91.4924"
+                  style="--darkreader-inline-stroke: #e8e6e3"
+                  data-darkreader-inline-stroke=""
+                ></path>
+                <polygon
+                  fill="#e7e7e7"
+                  stroke="#e7e7e7"
+                  stroke-width="2"
+                  points="30.4512,-94.9925 40.4512,-91.4924 30.4511,-87.9925 30.4512,-94.9925"
+                  style="
+                    --darkreader-inline-fill: #e8e6e3;
+                    --darkreader-inline-stroke: #e8e6e3;
+                  "
+                  data-darkreader-inline-fill=""
+                  data-darkreader-inline-stroke=""
+                ></polygon>
+              </g>
+              <!-- Q0Q5Q8Q9Q11Q12&#45;&gt;Q10 -->
+              <g id="edge3" class="edge">
+                <title>Q0Q5Q8Q9Q11Q12-&gt;Q10</title>
+                <path
+                  fill="none"
+                  stroke="#e7e7e7"
+                  d="M223.839,-91.4924C241.5421,-91.4924 259.2584,-91.4924 274.367,-91.4924"
+                  style="--darkreader-inline-stroke: #e8e6e3"
+                  data-darkreader-inline-stroke=""
+                ></path>
+                <polygon
+                  fill="#e7e7e7"
+                  stroke="#e7e7e7"
+                  points="274.378,-94.9925 284.378,-91.4924 274.378,-87.9925 274.378,-94.9925"
+                  style="
+                    --darkreader-inline-fill: #e8e6e3;
+                    --darkreader-inline-stroke: #e8e6e3;
+                  "
+                  data-darkreader-inline-fill=""
+                  data-darkreader-inline-stroke=""
+                ></polygon>
+                <text
+                  text-anchor="middle"
+                  x="254.0224"
+                  y="-95.6924"
+                  font-family="Times,serif"
+                  font-size="14.00"
+                  fill="#e7e7e7"
+                  style="--darkreader-inline-fill: #e8e6e3"
+                  data-darkreader-inline-fill=""
+                >
+                  f
+                </text>
+              </g>
+              <!-- Q0Q5Q8Q9Q11Q12&#45;&gt;Q10 -->
+              <g id="edge4" class="edge">
+                <title>Q0Q5Q8Q9Q11Q12-&gt;Q10</title>
+                <path
+                  fill="none"
+                  stroke="#e7e7e7"
+                  d="M230.8904,-68.2343C242.9017,-67.7535 254.9789,-68.3853 266.46,-70.6924 273.5168,-72.1104 280.8217,-74.5572 287.587,-77.2856"
+                  style="--darkreader-inline-stroke: #e8e6e3"
+                  data-darkreader-inline-stroke=""
+                ></path>
+                <polygon
+                  fill="#e7e7e7"
+                  stroke="#e7e7e7"
+                  points="230.5832,-64.7467 220.8311,-68.8875 231.0369,-71.732 230.5832,-64.7467"
+                  style="
+                    --darkreader-inline-fill: #e8e6e3;
+                    --darkreader-inline-stroke: #e8e6e3;
+                  "
+                  data-darkreader-inline-fill=""
+                  data-darkreader-inline-stroke=""
+                ></polygon>
+                <text
+                  text-anchor="middle"
+                  x="254.0224"
+                  y="-75.6924"
+                  font-family="Times,serif"
+                  font-size="14.00"
+                  fill="#e7e7e7"
+                  style="--darkreader-inline-fill: #e8e6e3"
+                  data-darkreader-inline-fill=""
+                >
+                  c,f,d
+                </text>
+              </g>
+              <!-- Q0Q5Q8Q9Q11Q12&#45;&gt;Q0Q5Q8Q9Q11Q12 -->
+              <g id="edge2" class="edge">
+                <title>Q0Q5Q8Q9Q11Q12-&gt;Q0Q5Q8Q9Q11Q12</title>
+                <path
+                  fill="none"
+                  stroke="#e7e7e7"
+                  d="M117.7161,-190.6732C121.071,-197.0993 125.8631,-200.9848 132.0924,-200.9848 140.9518,-200.9848 146.9041,-193.1257 149.9496,-181.2757"
+                  style="--darkreader-inline-stroke: #e8e6e3"
+                  data-darkreader-inline-stroke=""
+                ></path>
+                <polygon
+                  fill="#e7e7e7"
+                  stroke="#e7e7e7"
+                  points="120.9908,-189.4373 114.2352,-181.2757 114.4267,-191.8688 120.9908,-189.4373"
+                  style="
+                    --darkreader-inline-fill: #e8e6e3;
+                    --darkreader-inline-stroke: #e8e6e3;
+                  "
+                  data-darkreader-inline-fill=""
+                  data-darkreader-inline-stroke=""
+                ></polygon>
+                <text
+                  text-anchor="middle"
+                  x="132.0924"
+                  y="-205.1848"
+                  font-family="Times,serif"
+                  font-size="14.00"
+                  fill="#e7e7e7"
+                  style="--darkreader-inline-fill: #e8e6e3"
+                  data-darkreader-inline-fill=""
+                >
+                  c,d
+                </text>
+              </g>
+            </g>
+          </svg>
