@@ -321,14 +321,15 @@
 
       const automaton = {
         1: {
-          states: ["Q0Q2", "Q1Q4", "Q3"],
+          states: ["Q0", "Q1", "Q2", "Q3"],
           alph: ["a", "b", "c"],
-          start: "Q0Q2",
+          start: "Q0",
           end: ["Q3"],
           transitionTable: {
-            Q0Q2: { a: "Q1Q4", b: "Q0Q2", c: "Q3" },
-            Q1Q4: { a: "Q1Q4", b: "Q3", c: "Q1Q4" },
-            Q3: { a: "Q1Q4", b: "Q1Q4", c: "Q1Q4" },
+            Q0: { a: "Q1", b: "Q2", c: "Q3" },
+            Q1: { a: "Q2", b: "Q3", c: "Q1" },
+            Q2: { a: "Q3", c: "Q3" },
+            Q3: { a: "Q3", b: "Q3", c: "Q3" },
           },
         },
         2: {
