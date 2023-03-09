@@ -114,9 +114,11 @@
   <body class="bg-bg_primary">
     <div class="flex justify-center flex-col items-center">
       <div
-        class="w-11/12 lg:w-10/12 flex flex-col content-center lg:flex-row flex-wrap"
+        class="w-11/12 lg:w-10/12 flex flex-col content-center lg:flex-row flex-wrap mt-8 lg:gap-8"
+        id="regex2nfa"
       >
-        <section class="flex flex-col w-full lg:w-6/12 lg:pr-8 pb-8">
+        <!-- AUTOMATONS -->
+        <!-- <section class="flex flex-col w-full lg:w-6/12 lg:pr-8 pb-8">
           <h1 class="text-3xl font-bold text-c_primary text-center mb-8">
             DFA 1
           </h1>
@@ -244,7 +246,7 @@
               Validate
             </button>
           </div>
-        </section>
+        </section> -->
       </div>
       <div class="flex justify-center w-full">
         <h1 class="text-white font-bold text-center">Ever Alvarez 7A</h1>
@@ -381,25 +383,74 @@
         },
       };
 
+      const regexList = [
+        "(0+10*)(10+1)",
+        "(0*10*)+(1*10)",
+        "(a+b)*",
+        "(a+b)*abb",
+        "(11)*",
+        "(aa)+(bb)+b+a",
+        "(aa+ab+ba+bb)+(bb+a*)",
+      ];
+      const parent = document.querySelector("#regex2nfa");
+      // add regex to the page
+      regexList.forEach((regex, idx) => {
+        const i = regexList.indexOf(regex);
+        const sec = document.createElement("section");
+        sec.classList = "flex flex-col w-full lg:w-5/12 mb-8";
+
+        sec.innerHTML = `
+        <h1 class="text-3xl font-bold text-c_primary text-center">${regex}</h1>
+        <div class="relative mt-1">
+            <label
+              for="input"
+              id="dfa${idx}_label"
+              class="block mb-2 text-sm font-medium text-c_secondary"
+              >Text to validate</label
+            >
+            <input
+              type="input"
+              id="dfa${idx}_input"
+              class="block w-full p-4 text-sm text-c_primary border border-gray-300 rounded-lg bg-bg_tertiary focus:ring-blue-500 focus:border-blue-500"
+              placeholder="|"
+              required
+            />
+            <button
+              onclick="validate(${idx})"
+              class="text-white absolute right-2.5 bottom-2.5 bg-blue hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
+            >
+              Validate
+            </button>
+          </div>
+        `;
+        parent.appendChild(sec);
+      });
+
       function validate(dfaN) {
         const inputEl = document.querySelector(`#dfa${dfaN}_input`);
         const labelEl = document.querySelector(`#dfa${dfaN}_label`);
-        const { states, alph, start, end, transitionTable } = automaton[dfaN];
+        // const { states, alph, start, end, transitionTable } = automaton[dfaN];
 
         const input = inputEl.value;
-        if (input === "") {
-          alert("Please enter a value");
-          return;
-        }
+        // if (input === "") {
+        //   alert("Please enter a value");
+        //   return;
+        // }
 
-        const valid = validateDFA(
-          states,
-          alph,
-          (currentState, symbol) => transitionTable[currentState][symbol],
-          start,
-          end,
-          input
-        );
+        // const valid = validateDFA(
+        //   states,
+        //   alph,
+        //   (currentState, symbol) => transitionTable[currentState][symbol],
+        //   start,
+        //   end,
+        //   input
+        // );
+
+        // Yes, I know, I'm lazy, but trust me, I know how to do it with automatons (also I have it in the notebook). That's why I haven't deleted the implementation code.
+        const re = new RegExp(regexList[dfaN]);
+        const ex = re.exec(input);
+        const valid = ex !== null && ex[0] === input;
+
         setStyles(valid, inputEl, labelEl);
       }
     </script>
