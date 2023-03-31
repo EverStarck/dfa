@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./dist/bundle.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
@@ -113,141 +114,76 @@
   </head>
   <body class="bg-bg_primary">
     <div class="flex justify-center flex-col items-center">
-      <div
-        class="w-11/12 lg:w-10/12 flex flex-col content-center lg:flex-row flex-wrap mt-8 lg:gap-8"
-        id="regex2nfa"
-      >
-        <!-- AUTOMATONS -->
-        <!-- <section class="flex flex-col w-full lg:w-6/12 lg:pr-8 pb-8">
-          <h1 class="text-3xl font-bold text-c_primary text-center mb-8">
-            DFA 1
+      <div class="w-11/12 lg:w-10/12 flex flex-col content-center lg:flex-row flex-wrap mt-8 lg:gap-8" id="regex2nfa">
+
+        <section class="flex flex-col w-full mb-8">
+          <h1 class="text-3xl font-bold text-c_primary text-center">
+            S -> AB
+            <br>
+            A -> aA | a
+            <br>
+            B -> bB | b
           </h1>
-
-          <div class="m-auto">
-            <img src="./dfa1.svg" alt="" class="max-w-xl w-full h-auto" />
-          </div>
-
-          <div class="relative mt-8">
-            <label
-              for="input"
-              id="dfa1_label"
-              class="block mb-2 text-sm font-medium text-c_secondary"
-              >Text to validate</label
-            >
-            <input
-              type="text"
-              id="dfa1_input"
+          <div class="relative mt-1">
+            <label for="input" id="dfa0_label" class="block mb-2 text-sm font-medium text-c_secondary">Text to
+              validate</label>
+            <input type="input" id="dfa0_input"
               class="block w-full p-4 text-sm text-c_primary border border-gray-300 rounded-lg bg-bg_tertiary focus:ring-blue-500 focus:border-blue-500"
-              placeholder="bab"
-              required
-            />
-            <button
-              onclick="validate('1')"
-              class="text-white absolute right-2.5 bottom-2.5 bg-blue hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
-            >
+              placeholder="aab" required="">
+            <button id="dfa0_button"
+              class="text-white absolute right-2.5 bottom-2.5 bg-blue hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">
               Validate
             </button>
           </div>
         </section>
 
-        <section class="flex flex-col w-full lg:w-6/12 pb-8">
-          <h1 class="text-3xl font-bold text-c_primary text-center mb-8">
-            DFA 2
+        <section class="flex flex-col w-full mb-8">
+          <h1 class="text-3xl font-bold text-c_primary text-center">
+            S -> AB | C
+            <br>
+            A -> aAb | cb
+            <br>
+            B -> cBd | cd
+            <br>
+            C -> aCd | aDd
+            <br>
+            D -> bDc | bc
           </h1>
-
-          <div class="m-auto">
-            <img src="./dfa2.svg" alt="" class="max-w-xl w-full h-auto" />
-          </div>
-
-          <div class="relative mt-8">
-            <label
-              for="input"
-              id="dfa2_label"
-              class="block mb-2 text-sm font-medium text-c_secondary"
-              >Text to validate</label
-            >
-            <input
-              type="input"
-              id="dfa2_input"
+          <div class="relative mt-1">
+            <label for="input" id="dfa1_label" class="block mb-2 text-sm font-medium text-c_secondary">Text to
+              validate</label>
+            <input type="input" id="dfa1_input"
               class="block w-full p-4 text-sm text-c_primary border border-gray-300 rounded-lg bg-bg_tertiary focus:ring-blue-500 focus:border-blue-500"
-              placeholder="acc"
-              required
-            />
-            <button
-              onclick="validate('2')"
-              class="text-white absolute right-2.5 bottom-2.5 bg-blue hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
-            >
+              placeholder="aabcdd" required="">
+            <button id="dfa1_button"
+              class="text-white absolute right-2.5 bottom-2.5 bg-blue hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">
               Validate
             </button>
           </div>
         </section>
 
-        <section class="flex flex-col w-full lg:w-6/12 lg:pr-8 sm:pb-8">
-          <h1 class="text-3xl font-bold text-c_primary text-center mb-8">
-            DFA 3
+        <section class="flex flex-col w-full mb-8">
+          <h1 class="text-3xl font-bold text-c_primary text-center ">
+            S -> SS
+            <br>
+            S -> (S)
+            <br>
+            S -> ()
           </h1>
-
-          <div class="m-auto">
-            <img src="./dfa3.svg" alt="" class="max-w-xl w-full h-auto" />
-          </div>
-
-          <div class="relative mt-8">
-            <label
-              for="input"
-              id="dfa3_label"
-              class="block mb-2 text-sm font-medium text-c_secondary"
-              >Text to validate</label
-            >
-            <input
-              type="input"
-              id="dfa3_input"
+          <div class="relative mt-1">
+            <label for="input" id="dfa2_label" class="block mb-2 text-sm font-medium text-c_secondary">Text to
+              validate</label>
+            <input type="input" id="dfa2_input"
               class="block w-full p-4 text-sm text-c_primary border border-gray-300 rounded-lg bg-bg_tertiary focus:ring-blue-500 focus:border-blue-500"
-              placeholder="abbccbb"
-              required
-            />
-            <button
-              onclick="validate('3')"
-              class="text-white absolute right-2.5 bottom-2.5 bg-blue hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
-            >
+              placeholder="()()" required="">
+            <button id="dfa2_button"
+              class="text-white absolute right-2.5 bottom-2.5 bg-blue hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2">
               Validate
             </button>
           </div>
         </section>
-
-        <section class="flex flex-col w-full lg:w-6/12">
-          <h1 class="text-3xl font-bold text-c_primary text-center mb-8">
-            DFA 4
-          </h1>
-
-          <div>
-            <div class="m-auto">
-              <img src="./dfa4.svg" alt="" class="max-w-xl w-full h-auto" />
-            </div>
-          </div>
-
-          <div class="relative mt-8">
-            <label
-              for="input"
-              id="dfa4_label"
-              class="block mb-2 text-sm font-medium text-c_secondary"
-              >Text to validate</label
-            >
-            <input
-              type="input"
-              id="dfa4_input"
-              class="block w-full p-4 text-sm text-c_primary border border-gray-300 rounded-lg bg-bg_tertiary focus:ring-blue-500 focus:border-blue-500"
-              placeholder="fcf"
-              required
-            />
-            <button
-              onclick="validate('4')"
-              class="text-white absolute right-2.5 bottom-2.5 bg-blue hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
-            >
-              Validate
-            </button>
-          </div>
-        </section> -->
       </div>
+
       <div class="flex justify-center w-full">
         <h1 class="text-white font-bold text-center">Ever Alvarez 7A</h1>
       </div>
@@ -285,270 +221,5 @@
         </svg>
       </a>
     </div>
-
-    <script>
-      function validateDFA(states, alph, tansitionFn, start, end, input) {
-        let currentState = start;
-
-        for (const symbol of input) {
-          if (!alph.includes(symbol)) {
-            return false;
-          }
-
-          // Next state
-          currentState = tansitionFn(currentState, symbol);
-
-          if (!states.includes(currentState)) {
-            return false;
-          }
-        }
-
-        return end.includes(currentState);
-      }
-
-      function setStyles(valid, input, label) {
-        if (valid) {
-          input.classList =
-            "block w-full p-4 text-sm text-green border border-green rounded-lg bg-bg_tertiary focus:ring-blue-500 focus:border-blue-500";
-          label.classList = "block mb-2 text-sm font-medium text-green";
-          label.innerHTML = "DFA Valid!";
-          return;
-        }
-
-        input.classList =
-          "block w-full p-4 text-sm text-red border border-red rounded-lg bg-bg_tertiary focus:ring-blue-500 focus:border-blue-500";
-        label.classList = "block mb-2 text-sm font-medium text-red";
-        label.innerHTML = "DFA Invalid!";
-      }
-
-      const automaton = {
-        // Unit 2
-        // 1: {
-        //   states: ["Q0", "Q1", "Q2", "Q3"],
-        //   alph: ["a", "b", "c"],
-        //   start: "Q0",
-        //   end: ["Q3"],
-        //   transitionTable: {
-        //     Q0: { a: "Q1", b: "Q2", c: "Q3" },
-        //     Q1: { a: "Q2", b: "Q3", c: "Q1" },
-        //     Q2: { a: "Q3", c: "Q3" },
-        //     Q3: { a: "Q3", b: "Q3", c: "Q3" },
-        //   },
-        // },
-        // 2: {
-        //   states: ["Q3Q6Q8", "Q0", "Q5", "Q1", "Q4"],
-        //   alph: ["a", "b", "c"],
-        //   start: "Q0",
-        //   end: ["Q3Q6Q8"],
-        //   transitionTable: {
-        //     Q3Q6Q8: { a: "Q5", b: "Q5", c: "Q5" },
-        //     Q0: { a: "Q4", b: "Q5", c: "Q1" },
-        //     Q5: { a: "Q5", b: "Q5", c: "Q5" },
-        //     Q1: { a: "Q5", b: "Q5", c: "Q3Q6Q8" },
-        //     Q4: { a: "Q4", b: "Q3Q6Q8", c: "Q1" },
-        //   },
-        // },
-        // 3: {
-        //   states: ["Q0", "Q1", "Q2", "Q3", "Q4", "Q7", "Q8", "Q9"],
-        //   alph: ["a", "b", "c"],
-        //   start: "Q0",
-        //   end: ["Q7", "Q8"],
-        //   transitionTable: {
-        //     Q0: { a: "Q1" },
-        //     Q1: { a: "Q7", b: "Q2" },
-        //     Q2: { b: "Q8" },
-        //     Q3: { b: "Q9", c: "Q4" },
-        //     Q4: { c: "Q3" },
-        //     Q7: { a: "Q7", b: "Q2" },
-        //     Q8: { b: "Q8", c: "Q4" },
-        //     Q9: { b: "Q8" },
-        //   },
-        // },
-        // 4: {
-        //   states: ["Q0Q5Q8Q9Q11Q12", "Q10"],
-        //   alph: ["c", "f", "d"],
-        //   start: "Q0Q5Q8Q9Q11Q12",
-        //   end: ["Q10"],
-        //   transitionTable: {
-        //     Q0Q5Q8Q9Q11Q12: {
-        //       c: "Q0Q5Q8Q9Q11Q12",
-        //       f: "Q10",
-        //       d: "Q0Q5Q8Q9Q11Q12",
-        //     },
-        //     Q10: {
-        //       c: "Q0Q5Q8Q9Q11Q12",
-        //       f: "Q0Q5Q8Q9Q11Q12",
-        //       d: "Q0Q5Q8Q9Q11Q12",
-        //     },
-        //   },
-        // },
-        // Unit 3
-        "(0+10*)(10+1)": {
-          states: ["1", "2", "3", "4", "5", "6"],
-          alph: ["0", "1"],
-          start: "1",
-          end: ["6"],
-          transitionTable: {
-            1: { 0: "2" },
-            2: { 0: "2", 1: "3" },
-            3: { 0: "3", 1: "4" },
-            4: { 0: "5" },
-            5: { 0: "5", 1: "6" },
-            6: {},
-          },
-        },
-        "(0*10*)+(1*10)": {
-          states: ["1", "2", "3", "4"],
-          alph: ["0", "1"],
-          start: "1",
-          end: ["4"],
-          transitionTable: {
-            1: { 0: "1", 1: "2" },
-            2: { 0: "2", 1: "3" },
-            3: { 0: "4", 1: "3" },
-            4: { 0: "2", 1: "3" },
-          },
-        },
-        "(a+b)*": {
-          states: ["1", "2"],
-          alph: ["a", "b"],
-          start: "1",
-          end: ["1"],
-          transitionTable: {
-            1: { a: "2" },
-            2: { a: "2", b: "1" },
-          },
-        },
-        "(a+b)*abb": {
-          states: ["1", "2", "3", "4", "5"],
-          alph: ["a", "b"],
-          start: "1",
-          end: ["5"],
-          transitionTable: {
-            1: { a: "2" },
-            2: { a: "3", b: "4" },
-            3: { a: "3", b: "1" },
-            4: { a: "2", b: "5" },
-            5: {},
-          },
-        },
-        "(11)*": {
-          states: ["1", "2"],
-          alph: ["1"],
-          start: "1",
-          end: ["1"],
-          transitionTable: {
-            1: { 1: "2" },
-            2: { 1: "1" },
-          },
-        },
-        "(aa)+(bb)+b+a": {
-          states: ["1", "2", "3", "4", "5", "6", "7"],
-          alph: ["a", "b"],
-          start: "1",
-          end: ["7"],
-          transitionTable: {
-            1: { a: "2" },
-            2: { a: "3" },
-            3: { a: "2", b: "4" },
-            4: { a: "5" },
-            5: { a: "6" },
-            6: { a: "7", b: "6" },
-            7: {},
-          },
-        },
-        "(aa+ab+ba+bb)+(bb+a*)": {
-          states: [
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "6",
-            "7",
-            "8",
-            "9",
-            "10",
-            "11",
-            "12",
-          ],
-          alph: ["a", "b"],
-          start: "1",
-          end: ["11", "12"],
-          transitionTable: {
-            1: { a: "2" },
-            2: { a: "3" },
-            3: { a: "4" },
-            4: { a: "4", b: "5" },
-            5: { b: "6" },
-            6: { a: "7", b: "6" },
-            7: { a: "7", b: "8" },
-            8: { b: "9" },
-            9: { b: "10" },
-            10: { b: "11" },
-            11: { a: "12", b: "11" },
-            12: { a: "12" },
-          },
-        },
-      };
-
-      const regexList = Object.keys(automaton);
-
-      const parent = document.querySelector("#regex2nfa");
-      // add regex to the page
-      regexList.forEach((regex, idx) => {
-        const sec = document.createElement("section");
-        sec.classList = "flex flex-col w-full lg:w-5/12 mb-8";
-
-        sec.innerHTML = `
-        <h1 class="text-3xl font-bold text-c_primary text-center">${regex}</h1>
-        <div class="relative mt-1">
-            <label
-              for="input"
-              id="dfa${idx}_label"
-              class="block mb-2 text-sm font-medium text-c_secondary"
-              >Text to validate</label
-            >
-            <input
-              type="input"
-              id="dfa${idx}_input"
-              class="block w-full p-4 text-sm text-c_primary border border-gray-300 rounded-lg bg-bg_tertiary focus:ring-blue-500 focus:border-blue-500"
-              placeholder="|"
-              required
-            />
-            <button
-              onclick="validate('${regex}', ${idx})"
-              class="text-white absolute right-2.5 bottom-2.5 bg-blue hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2"
-            >
-              Validate
-            </button>
-          </div>
-        `;
-        parent.appendChild(sec);
-      });
-
-      function validate(dfaN, idx) {
-        const inputEl = document.querySelector(`#dfa${idx}_input`);
-        const labelEl = document.querySelector(`#dfa${idx}_label`);
-        const { states, alph, start, end, transitionTable } = automaton[dfaN];
-
-        const input = inputEl.value;
-        // if (input === "") {
-        //   alert("Please enter a value");
-        //   return;
-        // }
-
-        const valid = validateDFA(
-          states,
-          alph,
-          (currentState, symbol) => transitionTable[currentState][symbol],
-          start,
-          end,
-          input
-        );
-
-        setStyles(valid, inputEl, labelEl);
-      }
-    </script>
   </body>
 </html>
